@@ -1,0 +1,25 @@
+<div class="row">
+  <div class="col-3"></div>
+    <div class="col-6">
+      <br>
+      <h2 class="text-center">Create</h2>
+      <br>
+      <form name= "parcial" >
+        <div class="form-group">
+          <label for= "parcialId"><b>ID</b></label>
+          <input type="text" name="parcialId"               class="form-control" id="parcialId">
+                  <div class="invalid-feedback">
+                      <div>The parcial's id is missing</div>
+                  </div>
+        </div>
+<div class="row form-inline justify-content-center align-self-center">
+                <button type="submit" class="btn btn-primary">Create</button>
+                <div class="divider"></div>
+                <button type="button" class="btn btn-danger" (click)="cancelCreation()">Cancel</button>
+            </div>
+      </form>
+  </div>
+
+  <div class="col-3"></div>
+
+</div>
