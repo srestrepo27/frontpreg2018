@@ -4,14 +4,29 @@
       <br>
       <h2 class="text-center">Create</h2>
       <br>
-      <form name= "parcial" >
+      <form name= "parcial" (ngSubmit)="f.form.valid && createParcial()" #f="ngForm" novalidate >
         <div class="form-group">
           <label for= "parcialId"><b>ID</b></label>
-          <input type="text" name="parcialId"               class="form-control" id="parcialId">
+          <input type="text" name="parcialId"               class="form-control" id="parcialId" [(ngModel)]="parcial.id" #parcialId="ngModel" [ngClass]="{ 'is-invalid': f.submitted && parcialId.invalid }" required>
                   <div class="invalid-feedback">
                       <div>The parcial's id is missing</div>
                   </div>
         </div>
+<!--
+        <div class="form-group">
+                <label for="parcialDate"><b> Date</b></label>
+                <div [ngClass]="{ 'is-invalid': f.submitted && parcialDte.invalid }">
+                    <input class="form-control" id="parcialDte" name="parcialDte" [(ngModel)]="parcial.date"
+                        ngbDatepicker #d="ngbDatepicker" (click)="d.toggle()" #parcialDte="ngModel" [ngClass]="{'is-invalid': f.submitted && (parcialDte.untouched || parcialDte.invalid) }"
+                        required>
+                    <div class="invalid-feedback">
+                        <div>The  date is missing</div>
+                    </div>
+                </div>
+            </div>
+            -->
+
+
 <div class="row form-inline justify-content-center align-self-center">
                 <button type="submit" class="btn btn-primary">Create</button>
                 <div class="divider"></div>
